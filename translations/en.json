@@ -1,0 +1,8 @@
+{
+  "title": "Tuya S6 (qt) Cloud",
+  "config": {
+    "error": {
+      "cannot_connect": "Could not connect to Tuya. Check region, access id/secret and device id."
+    }
+  }
+}
