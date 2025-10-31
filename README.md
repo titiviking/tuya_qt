@@ -68,13 +68,6 @@ Provides a native **Alarm Control Panel** (Disarm / Arm Away / Arm Home) and exp
 
 ## Installation
 
-### HACS (Custom Repository)
-
-1. In HACS → **Integrations** → **Custom repositories**, add this repository URL.  
-   Category: **Integration**.
-2. Search for **Tuya S6 (qt) Cloud** and **Install**.
-3. Restart Home Assistant.
-
 ### Manual
 
 1. Copy the folder to: `config/custom_components/tuya_qt/`
