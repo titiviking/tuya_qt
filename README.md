@@ -121,7 +121,7 @@ Restart HA and check **Settings → System → Logs** (or container logs).
 **“Could not connect / sign invalid (1004)”**  
 - Recheck **Access Secret** (no leading/trailing spaces).  
 - Use **Region = `auto`** to let the integration discover the right data center.  
-- If issues persist, **rotate the Access Secret** in the Tuya console (Project → Authorization Key → Regenerate) and re-enter it in HA.
+
 
 **“No entities” but login succeeded**  
 - Confirm your S6 is visible under the **linked app account** in the project.  
@@ -139,7 +139,6 @@ Restart HA and check **Settings → System → Logs** (or container logs).
 
 ## Privacy & Security
 
-- **No secrets** are included in this repository.  
 - Your **Access ID/Secret** and **Device ID** are entered only in Home Assistant’s UI and stored in HA’s config storage.  
 - The integration signs requests using Tuya’s **New Signature** scheme (includes `stringToSign`/`Content-SHA256`; supports `nonce` when required).
 
