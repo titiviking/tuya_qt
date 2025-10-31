@@ -7,11 +7,7 @@ from homeassistant.components.alarm_control_panel import (
     AlarmControlPanelEntityFeature,
     AlarmControlPanelState,  # enum-based state (new API)
 )
-from homeassistant.const import (
-    STATE_ALARM_ARMED_AWAY,
-    STATE_ALARM_ARMED_HOME,
-    STATE_ALARM_DISARMED,
-)
+
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
@@ -103,22 +99,6 @@ class TuyaS6Alarm(CoordinatorEntity[TuyaS6Coordinator], AlarmControlPanelEntity)
             return AlarmControlPanelState.ARMED_HOME
         return None
 
-    @property
-    def state(self) -> str | None:
-        """
-        Back-compat for older frontends/automations.
-        Mirrors alarm_state into the legacy string constants.
-        """
-        enum_state = self.alarm_state
-        if enum_state is None:
-            return None
-        if enum_state is AlarmControlPanelState.DISARMED:
-            return STATE_ALARM_DISARMED
-        if enum_state is AlarmControlPanelState.ARMED_AWAY:
-            return STATE_ALARM_ARMED_AWAY
-        if enum_state is AlarmControlPanelState.ARMED_HOME:
-            return STATE_ALARM_ARMED_HOME
-        return None
 
     # ---------- Commands ----------
 
